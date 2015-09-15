@@ -1,0 +1,129 @@
+<html>
+  <head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="jquery.mobile-1.4.2.min.css" />
+    <script src="jquery-1.11.0.min.js"></script> <!-- trebuie inclus, JQM îl folosește -->
+    <script src="jquery.mobile-1.4.2.min.js"></script> <!-- important să fie după jquery.js -->
+	<script>
+		$(function() {
+			$("#butonspredoi").on("click",function(){
+				$.mobile.changePage("#pag2");
+			});
+			$("#inputspredoi").on("click",function(){
+				$.mobile.changePage("#pag3");
+				// mergea și cu $("#butonspredoi").trigger("click"), adică putem declanșa evenimentul click al celuilalt buton
+			});
+			$("#inputspredoi").on("click",function(){
+				$.mobile.changePage("#pag4");
+				// mergea și cu $("#butonspredoi").trigger("click"), adică putem declanșa evenimentul click al celuilalt buton
+			});
+		});
+	</script>
+  </head>
+  <body>
+  
+    <div data-role="page" id="pag1">
+      <div data-role="header"><h1>Bine ati venit</h1></div>
+      <div data-role="content">
+		<a data-role="button" id="legaturaladoi" href="#pag2">Despre noi</a> <!-- recomandat pentru navigație -->
+		<a data-role="button" id="legaturaladoi" href="#pag3">Contact</a> <!-- recomandat pentru navigație -->
+		<a data-role="button" id="legaturaladoi" href="#pag4">Servicii</a> <!-- recomandat pentru navigație -->
+		<button id="butonspredoi">Sari la doi</button> <!-- recomandat pentru declanșare evenimente -->
+		<input type="button" id="inputspredoi" value="Input spre doi" /> <!-- recomandat pentru trimitere formulare -->
+	  </div>
+      <div data-role="footer"><h1>Programarile se fac pe Str. Mihali Teodor nr. 2 sau la numarul de telefon: 0740 644 326</h1></div>
+    </div>
+	
+ 
+		<div data-role="page" id="pag2">
+      <div data-role="header"><h1>Despre noi</h1></div>
+	  
+	  <div data-role="header">
+	
+<div data-role="navbar">
+	<ul>
+		<li><a href="#pag1" class="ui-btn-active ui-state-persist">Home</a></li>
+		<li><a href="#pag2">Despre noi</a></li>
+		<li><a href="#pag3">Contact</a></li>
+		<li><a href="#pag4">Servicii</a></li>
+	</ul>
+</div><!-- /navbar -->
+
+	</br>
+</div>
+      <div data-role="content">
+	  
+	 <!--/Start cod prognoza-meteo.ro/--> <div id="dmeteo" style='color:#ffffff;border:1px solid #941414;width:160 px;text-align:center;background:#941414;'>
+ <a href="http://www.prognoza-meteo.ro" title="Prognoza Meteo" target="_blank" style="color:#ffffff;">Prognoza Meteo</a> </div>
+<iframe id="pmeteo" SRC="http://www.prognoza-meteo.ro/preluareprognoza.php?parameters=160 ,941414,941414 ,ffffff,ffffff ,1 ,ROXX0003" NAME="vremea1" hspace=0 vspace=0 ALIGN="left" HEIGHT="199" WIDTH="162" scrolling=no marginheight=0 marginwidth=0 frameborder=0> </iframe> <script language="JavaScript"> function errorHandler(evt) {document.getElementById('pmeteo').style.display="none"; document.getElementById('dmeteo').style.display="none"; } var img = new Image(); img.onerror = errorHandler; img.src ='http://www.prognoza-meteo.ro/ban.gif?x='+Math.random(); </script> <!--/End cod/--> 
+</br>
+
+	  <H4>
+Frumusețea este definită ca un aspect care aduce bucurie persoanei care o deține. Când spunem că ceva este frumos, recomandăm celorlalți că ar trebui să se bucure de această frumusețe? De unde știm că ceea ce nouă ni se pare frumos, apare la fel și în ochii altora?
+
+Frumusețea depinde de gusturi, dar este ea vreodată obiectivă? Putem să justificăm logic dacă ceva sau cineva este frumos sau nu? Răspunsul instinctiv ar fi, desigur, „nu”.
+</H4>
+
+</br>
+<iframe width="854" height="510" src="https://www.youtube.com/embed/fK0d3BmQ6J0" frameborder="0" allowfullscreen></iframe>
+	  </div>
+      <div data-role="footer"><h1>@Copyright 2015</h1></div>
+    </div>
+	
+	<div data-role="page" id="pag3">
+      <div data-role="header"><h1>Contact</h1></div>
+<div data-role="navbar">
+	<ul>
+		<li><a href="#pag1" class="ui-btn-active ui-state-persist">Home</a></li>
+		<li><a href="#pag2">Despre noi</a></li>
+		<li><a href="#pag3">Contact</a></li>
+		<li><a href="#pag4">Servicii</a></li>
+	</ul>
+</div><!-- /navbar -->
+	 
+      <div data-role="content">
+	  
+	 
+</br>
+	<form action="https://192.168.0.251/proiect_final/sender.php" method="post">
+		<table cols='25%,*'>
+		<thead>Lasa-ne mesajul tau aici!</thead>
+		<tr><td>Nume:</td><td><input type=text" name="nume" size='15' maxlength="15"> </td></tr>
+		<tr><td>Prenume:</td><td><input type=text" name="prenume" size="25" maxlength="25"></td></tr>
+		<tr><td>Mesaj:</td><td><textarea name="ceva"></textarea> </td></tr>
+		<tr><td></td><td><input type="submit" value="Submit" /></td></tr>
+		</table>
+		</form>
+	  </div>
+	   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10930.255977832456!2d23.62215!3d46.77349!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x55e3e88a1a971223!2sSALON+MIRELA+ROMAN!5e0!3m2!1sro!2sro!4v1438939819629" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+	  <div>
+
+
+
+      <div data-role="footer"><h1>@Copyright 2015</h1></div>
+    </div>
+	
+	<div data-role="page" id="pag4">
+      <div data-role="header"><h1>Servicii</h1></div>
+	  <div data-role="navbar">
+	<ul>
+		<li><a href="#pag1" class="ui-btn-active ui-state-persist">Home</a></li>
+		<li><a href="#pag2">Despre noi</a></li>
+		<li><a href="#pag3">Contact</a></li>
+		<li><a href="#pag4">Servicii</a></li>
+	</ul>
+</div><!-- /navbar -->
+      <div data-role="content">
+	  <a href="Coafor.html" target="_parent"><img src="Coafor.png" border="0"></a><BR>
+		<a href="Impachetari_corporale.html" target="_parent"><img src="Impachetari.png" border="0"></a><BR>
+		<a href="Make_up.html" target="_parent"><img src="Machiaj.png" border="0"></a><BR>
+		<a href="Mani_pedi.html" target="_parent"><img src="Mani_Pedi.png" border="0"></a><BR>
+		<a href="Tratamente_faciale.html" target="_parent"><img src="Tratamente_faciale.jpg" border="0"></a><BR>
+	  
+	  </div>
+      <div data-role="footer"><h1>@Copyright 2015</h1></div>
+    </div>
+	
+  </body>
+</html>
